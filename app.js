@@ -3,10 +3,6 @@
 require('dotenv-safe').config();
 const { App } = require('@slack/bolt');
 
-console.log('---------------');
-console.log(process.env.SLACK_BOT_TOKEN);
-console.log('---------------');
-
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET
