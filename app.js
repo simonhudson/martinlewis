@@ -17,4 +17,4 @@ const fetchData = async (res) => {
 app.get('/', (req, res) => fetchData(res));
 app.post('/', (req, res) => fetchData(res));
 
-app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}`));
+// app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}`));
