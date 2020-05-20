@@ -11,9 +11,6 @@ const fetchData = async () => {
   const result = await axios.get('https://www.moneysavingexpert.com/latesttip#martinappearances');
   const dom = cheerio.load(result.data);
   const element = dom('#martinappearances');
-  console.log('---------------');
-  console.log(element.text());
-  console.log('---------------');
   res.send(element.text());
 };
 
