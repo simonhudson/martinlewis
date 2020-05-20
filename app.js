@@ -1,22 +1,23 @@
 'use strict';
 
 require('dotenv-safe').config();
-const { App } = require('@slack/bolt');
+const express = require('express');
+const app = express();
+const PORT = 3000;
+const axios = require('axios');
+const cheerio = require('cheerio');
 
-const app = new App({
-  token: process.env.SLACK_BOT_TOKEN,
-  signingSecret: process.env.SLACK_SIGNING_SECRET
-});
+const fetchData = async () => {
+  const result = await axios.get('https://www.moneysavingexpert.com/latesttip#martinappearances');
+  const dom = cheerio.load(result.data);
+  const element = dom('#martinappearances');
+  console.log('---------------');
+  console.log(element.text());
+  console.log('---------------');
+  res.send(element.text());
+};
 
+app.get('/', (req, res) => fetchData());
+app.post('/', (req, res) => fetchData());
 
-
-// All the room in the world for your code
-
-
-
-(async () => {
-  // Start your app
-  await app.start(process.env.PORT || 3000);
-
-  console.log('⚡️ Bolt app is running!');
-})();
+app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}`));
