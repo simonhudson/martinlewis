@@ -1,0 +1,24 @@
+{
+  "name": "martinlewis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@slack/bolt": "^1.6.0",
+    "dotenv-safe": "^8.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonhudson/martinlewis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonhudson/martinlewis/issues"
+  },
+  "homepage": "https://github.com/simonhudson/martinlewis#readme"
+}
